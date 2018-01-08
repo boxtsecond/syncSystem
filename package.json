@@ -1,0 +1,26 @@
+{
+  "name": "syncGoods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon . ",
+    "prod": "cross-env NODE_ENV=production nodemon . ",
+    "stag": "cross-env NODE_ENV=staging nodemon . "
+  },
+  "author": "Boxt",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "eutil": "0.0.13",
+    "file-register": "^0.1.0",
+    "ioredis": "^3.2.2",
+    "knex": "^0.14.2",
+    "mysql": "^2.15.0",
+    "node-schedule": "^1.2.5",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.3"
+  }
+}
