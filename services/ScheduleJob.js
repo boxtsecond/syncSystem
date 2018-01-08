@@ -20,8 +20,8 @@ class ScheduleJob {
 		let _self = this;
 		return _self.Schedule.create({
 			title: 'Sync Goods For OSS',
-			// rule: this.config.schedule.goodsRule,
-			rule: '5 * * * * *',
+			rule: this.config.schedule.goodsRule,
+			// rule: '5 * * * * *',
 			func: function () {
 				return Promise.all([
 					_self.goodsMysqlPer(),

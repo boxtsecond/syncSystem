@@ -75,7 +75,7 @@ module.exports = {
 		"updateUseTrx": true
 	},
 	"schedule": {
-		"goodsRule": "0 0 3 * * *",
+		"goodsRule": "30 * * * * *",
 		"deleteRedisKeyRule": "0 0 4 * * *",
 		"jobList": [
 			{
