@@ -7,8 +7,8 @@ class goodsModel {
   constructor(wclient,rclient) {
     this.wclient=wclient;
     this.rclient=rclient;
-    // this.goodsTable = 'goods';
-    this.goodsTable = 'goods_copy';
+    this.goodsTable = 'goods';
+    // this.goodsTable = 'goods_copy';
     this.discoverGoodsTable = 'discover_goods';
     this.goodsLimitTable = 'goods_limit';
     this.goodsStatisticsTable = 'goods_statistics';

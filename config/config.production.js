@@ -75,7 +75,7 @@ module.exports = {
 		"updateUseTrx": true
 	},
 	"schedule": {
-		"goodsRule": "30 * * * * *",
+		"goodsRule": "10 * * * * *",
 		"jobList": [
 			{
 				service: 'ScheduleService',
