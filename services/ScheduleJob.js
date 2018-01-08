@@ -25,8 +25,8 @@ class ScheduleJob {
 			func: function () {
 				return Promise.all([
 					_self.goodsMysqlPer(),
-					_self.goodsBillMysqlPer(),
-					_self.goodsStatisticsMysqlPer()
+					// _self.goodsBillMysqlPer(),
+					// _self.goodsStatisticsMysqlPer()
 				]);
 			}
 		});
