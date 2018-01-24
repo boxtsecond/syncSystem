@@ -16,22 +16,22 @@ module.exports = {
 			"database": "xgqoms"
 		}
 	},
-	"redis": {
-		"enableProxy": true,
-		"proxy": {
-			"master": {
-				"port": 19000,
-				"host": "172.19.247.82",
+	"redis":{
+		"enableProxy":true,
+		"proxy":{
+			"master":{
+				"port":19000,
+				"host":"172.19.247.82",
 				"password": '9HS3xgUBuv7sAa'
 			},
-			"salve": {
-				"port": 19001,
-				"options": {},
-				"host": "172.19.247.82",
+			"salve":{
+				"port":19001,
+				"options":{},
+				"host":"172.19.247.82",
 				"password": '9HS3xgUBuv7sAa'
 			}
 		},
-		"master": {
+		"master":{
 			sentinels: [
 				{
 					host: '172.19.247.82',
@@ -47,10 +47,10 @@ module.exports = {
 			name: "mymaster",
 			password: '9HS3xgUBuv7sAa'
 		},
-		"salve": {
-			"port": 7379,
-			"host": "127.0.0.1",
-			"options": {},
+		"salve":{
+			"port":7379,
+			"host":"127.0.0.1",
+			"options":{},
 			sentinels: [
 				{
 					host: '172.19.247.82',

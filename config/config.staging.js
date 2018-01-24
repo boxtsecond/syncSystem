@@ -20,32 +20,32 @@ module.exports = {
 		"enableProxy": true,
 		"proxy": {
 			"master": {
-				"port": 6379,
+				"port": 19000,
 				"host": "172.19.247.64",
-				"password": 'qn9G7of4lievPr'
+				"password": 'hzOU0siFJOUSR6'
 			},
 			"salve": {
-				"port": 6379,
+				"port": 19000,
 				"options": {},
 				"host": "172.19.247.64",
-				"password": 'qn9G7of4lievPr'
+				"password": 'hzOU0siFJOUSR6'
 			}
 		},
 		"master": {
 			sentinels: [
 				{
-					host: '172.19.247.82',
-					port: '26379'
+					host: '172.19.247.64',
+					port: '16381'
 				}, {
-					host: '172.19.247.80',
-					port: '26379'
+					host: '172.19.247.64',
+					port: '16382'
 				}, {
-					host: '172.19.247.81',
-					port: '26379'
+					host: '172.19.247.64',
+					port: '16383'
 				}
 			],
 			name: "mymaster",
-			password: '9HS3xgUBuv7sAa'
+			password: 'hzOU0siFJOUSR6'
 		},
 		"salve": {
 			"port": 7379,
@@ -53,18 +53,18 @@ module.exports = {
 			"options": {},
 			sentinels: [
 				{
-					host: '172.19.247.82',
-					port: '26379'
+					host: '172.19.247.64',
+					port: '16381'
 				}, {
-					host: '172.19.247.80',
-					port: '26379'
+					host: '172.19.247.64',
+					port: '16382'
 				}, {
-					host: '172.19.247.81',
-					port: '26379'
+					host: '172.19.247.64',
+					port: '16383'
 				}
 			],
 			name: "mymaster",
-			password: '9HS3xgUBuv7sAa'
+			password: 'hzOU0siFJOUSR6'
 		}
 	},
 	"digitalRedisNum": 500,
