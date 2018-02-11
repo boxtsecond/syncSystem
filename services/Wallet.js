@@ -150,6 +150,41 @@ class Wallet {
       }else return balance;
     });
   }
+  
+  getAllUserBalance (uid) {
+      return this.mysqlWalletModel.getAllUserBalance(uid).then(balanceArr => {
+          if(balanceArr && balanceArr.length) {
+	          return this.checkBalance(balanceArr).then(() => {
+	              if(balanceArr.length == 1000) return this.getAllUserBalance(balanceArr[999].uid);
+	              else {console.log('done');return true;}
+              })
+          }else {console.log('done');return true;};
+      });
+  }
+  
+  checkBalance(balanceArr) {
+	  return Promise.each(balanceArr, bc => {
+		  return this.redisWalletModel.getIncrRedisBalance(bc.uid, 1).then(rbc => {
+			  if(rbc && rbc.toString().fixed(2) != bc.balance.toString().fixed(2)) {
+				  console.error('--------', bc.uid);
+				  console.error('mysql/redis', bc.balance, rbc);
+				  return Promise.all([
+					  this.redisWalletModel.del(bc.uid, 1),
+					  this.redisWalletModel.delBalance(bc.uid, 1)
+				  ])
+			  }else if(!rbc) {
+			      console.log('----!!----', bc.uid);
+				  return this.redisWalletModel.del(bc.uid, 1);
+              }
+			  else console.log(bc.uid, rbc);
+		  })
+	  })
+  }
+  
+  start() {
+	  console.log('start check user balance');
+	  return this.getAllUserBalance(10000000);
+  }
 }
 
 module.exports = Wallet;

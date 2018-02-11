@@ -26,7 +26,7 @@ obj.set("schedule", schedule);
 obj.set("GoodsService",new services.Goods(datasource, util));
 // obj.set("DigitalService",new services.Digital(datasource, util));
 
-// obj.set("WalletService",new services.Wallet(datasource, util));
+obj.set("WalletService",new services.Wallet(datasource, util));
 // obj.set("UserExpService",new services.UserExp(datasource, util));
 obj.set("ChargeService",new services.Charge(datasource, util));
 obj.set("ScheduleService",new services.ScheduleJob(datasource, util, {GoodsService: obj.get('GoodsService'),ChargeService: obj.get('ChargeService'), schedule: obj.get('schedule')}));

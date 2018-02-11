@@ -39,6 +39,10 @@ class masterModel {
   getIncrRedisBalance (uid, type) {
     return this.rclient.hget(this.walletBalanceTable+uid, type);
   }
+  
+  delBalance(uid, type) {
+	  return this.wclient.hdel(this.walletBalanceTable+uid, type);
+  }
 }
 
 module.exports = masterModel;

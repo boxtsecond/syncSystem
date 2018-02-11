@@ -76,10 +76,14 @@ module.exports = {
 	},
 	"schedule": {
 		"goodsRule": "10 * * * * *",
-		"deleteRedisKeyRule": "0 0 4 * * *",
 		"jobList": [
 			{
 				service: 'ScheduleService',
+				func: 'start',
+				argu: []
+			},
+			{
+				service: 'WalletService',
 				func: 'start',
 				argu: []
 			}

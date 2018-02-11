@@ -45,6 +45,10 @@ class masterModel {
       return this.wclient(this.walletTable).increment('balance', score).where({uid: uid, type: type}).limit(1);
     }
   }
+  
+  getAllUserBalance(uid) {
+    return this.rclient(this.walletTable).select('uid', 'balance').where('uid', '<=', uid).orderBy('uid', 'desc').limit(1000);
+  }
 }
 
 module.exports = masterModel;

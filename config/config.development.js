@@ -58,6 +58,11 @@ module.exports = {
 				service: 'ScheduleService',
 				func: 'start',
 				argu: []
+			},
+			{
+				service: 'WalletService',
+				func: 'start',
+				argu: []
 			}
 		]
 	},
